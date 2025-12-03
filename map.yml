@@ -1,0 +1,325 @@
+infra:
+  _vars:
+    Domain: "infra"
+  devops:
+    _vars:
+      Pillar: "devops"
+    ansible_controller:
+      SkillCode: "infra.devops.ansible_controller"
+      ShortName: "Ansible Controller"
+      Scope: "Managing Ansible controllers to deploy, manage, and monitor infrastructure resources."
+    ansible_library:
+      SkillCode: "infra.devops.ansible_library"
+      ShortName: "Ansible Library"
+      Scope: "Designing and maintaining Ansible roles, playbooks, and modules to automate infrastructure deployments."
+    jumpbox:
+      SkillCode: "infra.devops.jumpbox"
+      ShortName: "Jumpbox"
+      Scope: "Configuring and maintaining a jumpbox server to enable remote access to infrastructure resources."
+    gitlab:
+      SkillCode: "infra.devops.gitlab"
+      ShortName: "GitLab CI/CD"
+      Scope: "Designing and maintaining GitLab pipelines, stages, environments, and container builds for multiple services."
+    nexus:
+      SkillCode: "infra.devops.nexus"
+      ShortName: "Nexus (PyPI/npm)"
+      Scope: "Operating Nexus as an internal package repository for Python and JavaScript dependencies."
+
+  database:
+    _vars:
+      Pillar: "database"
+    mysql:
+      SkillCode: "infra.database.mysql"
+      ShortName: "MySQL"
+      Scope: "Deploying and managing MySQL for application use, including basic schema work, backups, and troubleshooting."
+    postgres:
+      SkillCode: "infra.database.postgres"
+      ShortName: "PostgreSQL"
+      Scope: "Deploying and managing PostgreSQL instances for application workloads, including basic configuration, backups, and tuning."
+    redis:
+      SkillCode: "infra.database.redis"
+      ShortName: "Redis"
+      Scope: "Using Redis for caching and distributed locks, understanding key TTLs, memory behavior, and failure modes in production."
+    sql_server:
+      SkillCode: "infra.database.sql_server"
+      ShortName: "SQL Server"
+      Scope: "Operating SQL Server, including schema design, indexing, CDC setup, and understanding performance characteristics."
+
+  observability:
+    _vars:
+      Pillar: "observability"
+    elastic_apm:
+      SkillCode: "infra.observability.elastic_apm"
+      ShortName: "Elastic APM"
+      Scope: "Using Elastic APM agents and data to analyze application performance and trace flows across services."
+    elastic_beats:
+      SkillCode: "infra.observability.elastic_beats"
+      ShortName: "Elastic Beats"
+      Scope: "Configuring and managing Elastic Beats agents for data ingestion, parsing, and filtering."
+    elastic_fleet:
+      SkillCode: "infra.observability.elastic_fleet"
+      ShortName: "Elastic Fleet"
+      Scope: "Managing and monitoring the Elastic Fleet for containerized applications and services."
+    elastic_logstash:
+      SkillCode: "infra.observability.elastic_logstash"
+      ShortName: "Elastic Logstash"
+      Scope: "Configuring and managing Elastic Logstash pipelines for data ingestion, parsing, and filtering."
+    elastic_synthetics:
+      SkillCode: "infra.observability.elastic_synthetics"
+      ShortName: "Elastic Synthetics"
+      Scope: "Creating and managing synthetic checks for HTTP journeys and endpoints to detect outages before users report them."
+    elasticsearch:
+      SkillCode: "infra.observability.elasticsearch"
+      ShortName: "Elasticsearch"
+      Scope: "Designing and operating Elasticsearch clusters (including ILM, hot/warm tiers) for logs and metrics."
+    grafana_prometheus:
+      SkillCode: "infra.observability.grafana_prometheus"
+      ShortName: "Grafana/Prometheus"
+      Scope: "Building Grafana dashboards and scraping metrics via Prometheus to visualize system and application behavior."
+    kibana:
+      SkillCode: "infra.observability.kibana"
+      ShortName: "Kibana"
+      Scope: "Building Kibana dashboards and spaces to visualize logs, APM traces, and business metrics."
+    solarwinds_dpa:
+      SkillCode: "infra.observability.solarwinds_dpa"
+      ShortName: "SolarWinds DPA"
+      Scope: "Using SolarWinds Database Performance Analyzer to identify slow queries and database bottlenecks in production."
+
+  orchestration:
+    _vars:
+      Pillar: "orchestration"
+    docker_swarm:
+      SkillCode: "infra.orchestration.docker_swarm"
+      ShortName: "Docker Swarm"
+      Scope: "Deploying and operating Docker Swarm clusters for current production workloads, including node management and rolling updates."
+    nomad:
+      SkillCode: "infra.orchestration.nomad"
+      ShortName: "HashiCorp Nomad"
+      Scope: "Designing and managing Nomad clusters for container and non-container workload orchestration."
+
+  platform:
+    _vars:
+      Pillar: "platform"
+    linux_server:
+      SkillCode: "infra.platform.linux_server"
+      ShortName: "Linux Server"
+      Scope: "Installing, configuring, and operating Linux servers (Ubuntu/CentOS) for production workloads."
+    windows_server:
+      SkillCode: "infra.platform.windows_server"
+      ShortName: "Windows Server"
+      Scope: "Configuring and maintaining Windows Server instances for application hosting, including services, RDP, and OS-level updates."
+
+  security:
+    _vars:
+      Pillar: "security"
+    hashi_vault:
+      SkillCode: "infra.security.hashi_vault"
+      ShortName: "HashiCorp Vault"
+      Scope: "Deploying and managing Vault for centralized secret management, including key rotation, policies, and auditing."
+    hashi_vault_pki:
+      SkillCode: "infra.security.hashi_vault_pki"
+      ShortName: "HashiCorp Vault PKI"
+      Scope: "Implementing Vault PKI to securely issue and manage certificates for internal applications and services."
+    os_firewall:
+      SkillCode: "infra.security.os_firewall"
+      ShortName: "OS Firewall (Linux/Windows)"
+      Scope: "Configuring host-level firewalls (UFW, Windows Firewall) to restrict network access based on least privilege and lateral movement prevention."
+
+  service_registry:
+    _vars:
+      Pillar: "service_registry"
+    consul_acl:
+      SkillCode: "infra.service_registry.consul_acl"
+      ShortName: "Consul ACLs"
+      Scope: "Designing and configuring Consul ACL policies, roles, and tokens to control access to the catalog and KV."
+    consul_catalog:
+      SkillCode: "infra.service_registry.consul_catalog"
+      ShortName: "Consul Service Catalog"
+      Scope: "Registering services with Consul, defining health checks, and maintaining the catalog state."
+    consul_security:
+      SkillCode: "infra.service_registry.consul_security"
+      ShortName: "Consul Security"
+      Scope: "Securing Consul communication with TLS, gossip encryption, and ACL enforcement."
+    consul_server:
+      SkillCode: "infra.service_registry.consul_server"
+      ShortName: "Consul Server"
+      Scope: "Deploying and managing Consul server clusters for high availability, Raft consensus, and data consistency."
+
+  messaging:
+    _vars:
+      Pillar: "messaging"
+    debezium_cdc:
+      SkillCode: "infra.messaging.debezium_cdc"
+      ShortName: "Debezium CDC"
+      Scope: "Configuring Debezium connectors for SQL Server, including plugins, snapshot modes, and topic management."
+    kafka_broker:
+      SkillCode: "infra.messaging.kafka_broker"
+      ShortName: "Kafka Broker"
+      Scope: "Running Kafka brokers for production, managing topics, partitions, and ensuring availability."
+    kafka_connect:
+      SkillCode: "infra.messaging.kafka_connect"
+      ShortName: "Kafka Connect"
+      Scope: "Running Kafka Connect clusters for data ingestion, transformation, and distribution."
+    kafka_schema_registry:
+      SkillCode: "infra.messaging.kafka_schema_registry"
+      ShortName: "Kafka Schema Registry"
+      Scope: "Managing Schema Registry for schema enforcement, compatibility checks, and evolution."
+    kafka_connect_schema:
+      SkillCode: "infra.messaging.kafka_connect_schema"
+      ShortName: "Kafka Connect & Schemas"
+      Scope: "Integrating Kafka Connect with Schema Registry, handling schema evolution, and debugging serialization issues."
+
+  networking:
+    _vars:
+      Pillar: "networking"
+    keepalived:
+      SkillCode: "infra.networking.keepalived"
+      ShortName: "Keepalived"
+      Scope: "Configuring and managing Keepalived VRRP for virtual IP (VIP) failover and load balancing."
+
+  virtualization:
+    _vars:
+      Pillar: "virtualization"
+    failover_cluster:
+      SkillCode: "infra.virtualization.failover_cluster"
+      ShortName: "Windows Failover Cluster"
+      Scope: "Configuring and operating Windows Failover Clusters for VM or service HA, including troubleshooting quorum and instability."
+    xcpng:
+      SkillCode: "infra.virtualization.xcpng"
+      ShortName: "XCP-ng"
+      Scope: "Managing XCP-ng pools and SRs, handling host failures, and recovering from VM/storage issues."
+
+role:
+  _vars:
+    Domain: "role"
+  software_architecture:
+    _vars:
+      Pillar: "software_architecture"
+    domain_language_design:
+      SkillCode: "role.software_architecture.domain_language_design"
+      ShortName: "Domain Language & Naming"
+      Scope: "Working with domain experts to define a domain language and applying it consistently across systems (services, topics, secrets)."
+    hexagonal_architecture:
+      SkillCode: "role.software_architecture.hexagonal_architecture"
+      ShortName: "Hexagonal Architecture"
+      Scope: "Designing backend services using ports and adapters to separate domain logic from infrastructure concerns."
+
+  software_engineering:
+    _vars:
+      Pillar: "software_engineering"
+    api_design:
+      SkillCode: "role.software_engineering.api_design"
+      ShortName: "API Design"
+      Scope: "Designing RESTful APIs using JSON/XML, considering security, performance, idempotency, and scalability."
+    auth_session_management:
+      SkillCode: "role.software_engineering.auth_session_management"
+      ShortName: "Auth & Session Management"
+      Scope: "Implementing authentication and session management for web applications, including OAuth2, JWT, and session storage."
+    django_core:
+      SkillCode: "role.software_engineering.django_core"
+      ShortName: "Django Core"
+      Scope: "Working with Django for web development, including models, views, templates, ORM optimization, and URL routing."
+    js_core:
+      SkillCode: "role.software_engineering.js_core"
+      ShortName: "JavaScript Core"
+      Scope: "Working with JavaScript for web development, including ES6+ features, event handling, and asynchronous programming."
+    python_core:
+      SkillCode: "role.software_engineering.python_core"
+      ShortName: "Python Core"
+      Scope: "Working with Python for web development, including deep understanding of the language internals, Flask, or other frameworks."
+    relational_database_index_tuning:
+      SkillCode: "role.software_engineering.relational_database_index_tuning"
+      ShortName: "Relational DB Index Tuning"
+      Scope: "Optimizing database indexes for better query performance, reducing disk I/O, and improving overall system throughput."
+    relational_database_schema_design:
+      SkillCode: "role.software_engineering.relational_database_schema_design"
+      ShortName: "Relational DB Schema Design"
+      Scope: "Designing and managing relational database schemas for data integrity, consistency, and normalization/denormalization strategies."
+    version_control_git:
+      SkillCode: "role.software_engineering.version_control_git"
+      ShortName: "Version Control (Git)"
+      Scope: "Advanced Git usage including branching strategies (GitFlow/Trunk), rebasing, conflict resolution, and history management."
+    websockets:
+      SkillCode: "role.software_engineering.websockets"
+      ShortName: "WebSockets"
+      Scope: "Implementing WebSockets for real-time bi-directional communication between clients and servers."
+
+  distributed_systems:
+    _vars:
+      Pillar: "distributed_systems"
+    event_driven_architecture:
+      SkillCode: "role.distributed_systems.event_driven_architecture"
+      ShortName: "Event-Driven Architecture"
+      Scope: "Designing systems around domain events, reducing temporal coupling, and ensuring scalability via asynchronous processing."
+    eventual_consistency_temporal_coupling:
+      SkillCode: "role.distributed_systems.eventual_consistency_temporal_coupling"
+      ShortName: "Eventual Consistency"
+      Scope: "Reasoning about eventual consistency models, handling race conditions, and designing for asynchronous data propagation."
+    saga_patterns:
+      SkillCode: "role.distributed_systems.saga_patterns"
+      ShortName: "Saga Patterns"
+      Scope: "Understanding and applying saga patterns for long-running distributed transactions with compensation logic."
+    stream_processing:
+      SkillCode: "role.distributed_systems.stream_processing"
+      ShortName: "Stream Processing"
+      Scope: "Operating on messages from Kafka using windowing functions to produce useful derived data for downstream consumers."
+
+  platform_engineering:
+    _vars:
+      Pillar: "platform_engineering"
+    blue_green_deploys:
+      SkillCode: "role.platform_engineering.blue_green_deploys"
+      ShortName: "Blue/Green Deployments"
+      Scope: "Designing and executing blue/green or canary release strategies to allow safe, low-downtime updates."
+    environment_separation:
+      SkillCode: "role.platform_engineering.environment_separation"
+      ShortName: "Dev/Prod Separation"
+      Scope: "Structuring infrastructure, ACLs, and tooling so environments are cleanly separated and production is guarded."
+    secure_jump_hosts:
+      SkillCode: "role.platform_engineering.secure_jump_hosts"
+      ShortName: "Secure Jump Hosts"
+      Scope: "Designing access patterns via jump servers to ensure secure, audited access to internal systems."
+
+  security_practices:
+    _vars:
+      Pillar: "security_practices"
+    server_hardening_linux:
+      SkillCode: "role.security_practices.server_hardening_linux"
+      ShortName: "Server Hardening (Linux)"
+      Scope: "Security best practices for Linux servers. Includes SSH hardening, X11 forwarding risks, auditd, and understanding why 'secure by default' is insufficient against modern threat vectors."
+    workstation_hardening_windows:
+      SkillCode: "role.security_practices.workstation_hardening_windows"
+      ShortName: "Workstation Hardening (Windows)"
+      Scope: "Windows workstation security. Includes understanding LSASS protection, Credential Guard, the risks of Domain Joining workstations, DA sprawl, and preventing lateral movement via browser credential dumping."
+    secrets_management_patterns:
+      SkillCode: "role.security_practices.secrets_management_patterns"
+      ShortName: "Secrets Management Patterns"
+      Scope: "Secure storage/access of secrets. Includes risks of saving passwords in tools (Remmina/RDP), env vars in logs, and rotation strategies."
+    web_app_security_basics:
+      SkillCode: "role.security_practices.web_app_security_basics"
+      ShortName: "Web App Security Basics"
+      Scope: "Understanding and mitigating OWASP Top 10 vulnerabilities (SQLi, XSS, CSRF, etc.) in application code."
+
+  sre:
+    _vars:
+      Pillar: "sre"
+    chaos_testing:
+      SkillCode: "role.sre.chaos_testing"
+      ShortName: "Chaos Testing & Drills"
+      Scope: "Intentionally introducing faults in non-prod environments to understand failure modes and verify resilience."
+    common_server_failure_modes:
+      SkillCode: "role.sre.common_server_failure_modes"
+      ShortName: "Common Server Failure Modes"
+      Scope: "Identifying and mitigating common failures such as disk saturation, inode exhaustion, OOM kills, and network saturation."
+    incident_detection_alerting:
+      SkillCode: "role.sre.incident_detection_alerting"
+      ShortName: "Incident Detection & Alerting"
+      Scope: "Designing actionable alerts and synthetics that detect incidents early and minimize alert fatigue."
+    log_structuring_correlation:
+      SkillCode: "role.sre.log_structuring_correlation"
+      ShortName: "Log Structuring & Correlation"
+      Scope: "Using structured logging (JSON) and trace IDs to correlate logs across distributed services for cohesive debugging."
+    root_cause_analysis:
+      SkillCode: "role.sre.root_cause_analysis"
+      ShortName: "Root Cause Analysis (RCA)"
+      Scope: "Investigating complex failures (e.g., clusters, networking, database locks) to identify root causes and write blameless post-mortems."
