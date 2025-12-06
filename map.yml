@@ -160,14 +160,6 @@ infra:
       SkillCode: "infra.messaging.kafka_connect"
       ShortName: "Kafka Connect"
       Scope: "Running Kafka Connect clusters for data ingestion, transformation, and distribution."
-    kafka_schema_registry:
-      SkillCode: "infra.messaging.kafka_schema_registry"
-      ShortName: "Kafka Schema Registry"
-      Scope: "Managing Schema Registry for schema enforcement, compatibility checks, and evolution."
-    kafka_connect_schema:
-      SkillCode: "infra.messaging.kafka_connect_schema"
-      ShortName: "Kafka Connect & Schemas"
-      Scope: "Integrating Kafka Connect with Schema Registry, handling schema evolution, and debugging serialization issues."
 
   networking:
     _vars:
@@ -192,6 +184,7 @@ infra:
 role:
   _vars:
     Domain: "role"
+
   software_architecture:
     _vars:
       Pillar: "software_architecture"
@@ -207,94 +200,62 @@ role:
   software_engineering:
     _vars:
       Pillar: "software_engineering"
-    api_design:
-      SkillCode: "role.software_engineering.api_design"
-      ShortName: "API Design"
-      Scope: "Designing RESTful APIs using JSON/XML, considering security, performance, idempotency, and scalability."
-    auth_session_management:
-      SkillCode: "role.software_engineering.auth_session_management"
-      ShortName: "Auth & Session Management"
-      Scope: "Implementing authentication and session management for web applications, including OAuth2, JWT, and session storage."
-    django_core:
-      SkillCode: "role.software_engineering.django_core"
-      ShortName: "Django Core"
-      Scope: "Working with Django for web development, including models, views, templates, ORM optimization, and URL routing."
-    js_core:
-      SkillCode: "role.software_engineering.js_core"
-      ShortName: "JavaScript Core"
-      Scope: "Working with JavaScript for web development, including ES6+ features, event handling, and asynchronous programming."
+    secure_api_architecture:
+      SkillCode: "role.software_engineering.secure_api_architecture"
+      ShortName: "Secure API Architecture"
+      Scope: "Designing RESTful APIs (JSON/XML) with integrated security strategies. Covers idempotency, statelessness, OAuth2/JWT handling, and session management."
     python_core:
       SkillCode: "role.software_engineering.python_core"
-      ShortName: "Python Core"
-      Scope: "Working with Python for web development, including deep understanding of the language internals, Flask, or other frameworks."
-    relational_database_index_tuning:
-      SkillCode: "role.software_engineering.relational_database_index_tuning"
-      ShortName: "Relational DB Index Tuning"
-      Scope: "Optimizing database indexes for better query performance, reducing disk I/O, and improving overall system throughput."
-    relational_database_schema_design:
-      SkillCode: "role.software_engineering.relational_database_schema_design"
-      ShortName: "Relational DB Schema Design"
-      Scope: "Designing and managing relational database schemas for data integrity, consistency, and normalization/denormalization strategies."
+      ShortName: "Production Python"
+      Scope: "Writing idiomatic, performant Python. Includes deep understanding of memory management (GIL), concurrency (asyncio), and packaging for production."
+    database_design_performance:
+      SkillCode: "role.software_engineering.database_design_performance"
+      ShortName: "DB Design & Performance"
+      Scope: "Designing normalized/denormalized schemas for integrity and tuning indexes/queries to reduce I/O and improve throughput."
     version_control_git:
       SkillCode: "role.software_engineering.version_control_git"
       ShortName: "Version Control (Git)"
       Scope: "Advanced Git usage including branching strategies (GitFlow/Trunk), rebasing, conflict resolution, and history management."
-    websockets:
-      SkillCode: "role.software_engineering.websockets"
-      ShortName: "WebSockets"
-      Scope: "Implementing WebSockets for real-time bi-directional communication between clients and servers."
+    testing_strategy:
+      SkillCode: "role.software_engineering.testing_strategy"
+      ShortName: "Testing Strategy"
+      Scope: "Designing comprehensive test suites. Knowing when to use unit vs. integration vs. E2E tests, and implementing TDD practices to ensure refactorability."
 
   distributed_systems:
     _vars:
       Pillar: "distributed_systems"
-    event_driven_architecture:
-      SkillCode: "role.distributed_systems.event_driven_architecture"
-      ShortName: "Event-Driven Architecture"
-      Scope: "Designing systems around domain events, reducing temporal coupling, and ensuring scalability via asynchronous processing."
-    eventual_consistency_temporal_coupling:
-      SkillCode: "role.distributed_systems.eventual_consistency_temporal_coupling"
-      ShortName: "Eventual Consistency"
-      Scope: "Reasoning about eventual consistency models, handling race conditions, and designing for asynchronous data propagation."
-    saga_patterns:
-      SkillCode: "role.distributed_systems.saga_patterns"
-      ShortName: "Saga Patterns"
-      Scope: "Understanding and applying saga patterns for long-running distributed transactions with compensation logic."
+    distributed_async_patterns:
+      SkillCode: "role.distributed_systems.distributed_async_patterns"
+      ShortName: "Distributed Async Patterns"
+      Scope: "Designing event-driven systems. Covers temporal coupling, handling race conditions/eventual consistency, and ensuring message durability."
     stream_processing:
       SkillCode: "role.distributed_systems.stream_processing"
-      ShortName: "Stream Processing"
-      Scope: "Operating on messages from Kafka using windowing functions to produce useful derived data for downstream consumers."
+      ShortName: "Stream Processing Logic"
+      Scope: "Designing logic to operate on message streams using windowing functions to produce derived data (distinct from managing Kafka infrastructure)."
 
   platform_engineering:
     _vars:
       Pillar: "platform_engineering"
-    blue_green_deploys:
-      SkillCode: "role.platform_engineering.blue_green_deploys"
-      ShortName: "Blue/Green Deployments"
-      Scope: "Designing and executing blue/green or canary release strategies to allow safe, low-downtime updates."
-    environment_separation:
-      SkillCode: "role.platform_engineering.environment_separation"
-      ShortName: "Dev/Prod Separation"
-      Scope: "Structuring infrastructure, ACLs, and tooling so environments are cleanly separated and production is guarded."
-    secure_jump_hosts:
-      SkillCode: "role.platform_engineering.secure_jump_hosts"
-      ShortName: "Secure Jump Hosts"
-      Scope: "Designing access patterns via jump servers to ensure secure, audited access to internal systems."
+    deployment_strategies:
+      SkillCode: "role.platform_engineering.deployment_strategies"
+      ShortName: "Deployment Strategies"
+      Scope: "Designing safe release patterns (Blue/Green, Canary). Includes environment separation strategies and minimizing downtime during updates."
+    iac_state_management:
+      SkillCode: "role.platform_engineering.iac_state_management"
+      ShortName: "IaC Principles & State"
+      Scope: "Managing infrastructure state (drift detection, locking, state file security) and designing reusable, modular infrastructure code patterns."
 
   security_practices:
     _vars:
       Pillar: "security_practices"
-    server_hardening_linux:
-      SkillCode: "role.security_practices.server_hardening_linux"
-      ShortName: "Server Hardening (Linux)"
-      Scope: "Security best practices for Linux servers. Includes SSH hardening, X11 forwarding risks, auditd, and understanding why 'secure by default' is insufficient against modern threat vectors."
-    workstation_hardening_windows:
-      SkillCode: "role.security_practices.workstation_hardening_windows"
-      ShortName: "Workstation Hardening (Windows)"
-      Scope: "Windows workstation security. Includes understanding LSASS protection, Credential Guard, the risks of Domain Joining workstations, DA sprawl, and preventing lateral movement via browser credential dumping."
-    secrets_management_patterns:
-      SkillCode: "role.security_practices.secrets_management_patterns"
-      ShortName: "Secrets Management Patterns"
-      Scope: "Secure storage/access of secrets. Includes risks of saving passwords in tools (Remmina/RDP), env vars in logs, and rotation strategies."
+    server_workstation_hardening:
+      SkillCode: "role.security_practices.server_workstation_hardening"
+      ShortName: "OS Hardening Strategy"
+      Scope: "Architecture-level hardening: reducing attack surface via Identity protection (LSASS/Credential Guard), tiering models to prevent lateral movement, and kernel/SSH tuning."
+    app_secrets_management:
+      SkillCode: "role.security_practices.app_secrets_management"
+      ShortName: "App Secrets Patterns"
+      Scope: "Secure patterns for handling secrets in code and logs. preventing leakages (env vars, history), and implementing rotation capabilities."
     web_app_security_basics:
       SkillCode: "role.security_practices.web_app_security_basics"
       ShortName: "Web App Security Basics"
@@ -303,22 +264,10 @@ role:
   sre:
     _vars:
       Pillar: "sre"
-    chaos_testing:
-      SkillCode: "role.sre.chaos_testing"
-      ShortName: "Chaos Testing & Drills"
-      Scope: "Intentionally introducing faults in non-prod environments to understand failure modes and verify resilience."
-    common_server_failure_modes:
-      SkillCode: "role.sre.common_server_failure_modes"
-      ShortName: "Common Server Failure Modes"
-      Scope: "Identifying and mitigating common failures such as disk saturation, inode exhaustion, OOM kills, and network saturation."
-    incident_detection_alerting:
-      SkillCode: "role.sre.incident_detection_alerting"
-      ShortName: "Incident Detection & Alerting"
-      Scope: "Designing actionable alerts and synthetics that detect incidents early and minimize alert fatigue."
-    log_structuring_correlation:
-      SkillCode: "role.sre.log_structuring_correlation"
-      ShortName: "Log Structuring & Correlation"
-      Scope: "Using structured logging (JSON) and trace IDs to correlate logs across distributed services for cohesive debugging."
+    observability_strategy:
+      SkillCode: "role.sre.observability_strategy"
+      ShortName: "Observability Strategy"
+      Scope: "Designing the 'Why' and 'How' of monitoring. Covers defining SLOs/Error Budgets, structuring logs for correlation (Trace IDs), and designing actionable alerts."
     root_cause_analysis:
       SkillCode: "role.sre.root_cause_analysis"
       ShortName: "Root Cause Analysis (RCA)"
